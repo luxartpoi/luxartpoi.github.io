@@ -3,7 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){try{
+  if(localStorage.getItem('lang'))return;
+  var l=(navigator.language||navigator.userLanguage||'').toLowerCase();
+  if(l.indexOf('ru')===0)return;
+  if(l.indexOf('pt')===0){location.replace('/pt/');return;}
+  location.replace('/en/');
+}catch(e){}})();
+</script>
+
 <title>Илья Поспелов — автоматизация поддержки для SaaS</title>
+<link rel="alternate" hreflang="ru" href="https://iliasupport.com/">
+<link rel="alternate" hreflang="en" href="https://iliasupport.com/en/">
+<link rel="alternate" hreflang="pt" href="https://iliasupport.com/pt/">
+<link rel="alternate" hreflang="x-default" href="https://iliasupport.com/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -241,7 +255,8 @@ footer .wordmark b{color:var(--accent-2)}
 <nav class="nav">
   <div class="wrap">
     <span class="wordmark">IL<b>IA</b>&nbsp;POSPELOV<b>.</b></span>
-    <span class="langsw"><b>RU</b><span aria-hidden="true">/</span><a href="/en/" hreflang="en">EN</a></span>
+    <span class="langsw"><b>RU</b><span aria-hidden="true">/</span><a href="/en/" hreflang="en" data-lang="en">EN</a><span aria-hidden="true">/</span><a href="/pt/" hreflang="pt" data-lang="pt">PT</a></span>
+    
     <a class="act" href="#contact">Разбор очереди →</a>
   </div>
 </nav>
@@ -363,8 +378,8 @@ footer .wordmark b{color:var(--accent-2)}
   <div class="wrap">
     <h2>Пришлите последние 100 тикетов.</h2>
     <p class="lede" style="margin-top:var(--s-8);max-width:34ch">Вернётся разбор: сколько из них закрывается без человека, что ломает вашего нынешнего бота и во сколько часов чьей-то недели это обходится. Бесплатно, созвон не нужен.</p>
-    <a class="btn solid" href="mailto:lux_art@yahoo.com?subject=%D0%A0%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D0%B8">Отправить тикеты →</a>
-    <a class="mail" href="mailto:lux_art@yahoo.com">lux_art@yahoo.com</a>
+    <a class="btn solid" href="mailto:hi@iliasupport.com?subject=%D0%A0%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D0%B8">Отправить тикеты →</a>
+    <a class="mail" href="mailto:hi@iliasupport.com">hi@iliasupport.com</a>
   </div>
 </section>
 
@@ -375,5 +390,11 @@ footer .wordmark b{color:var(--accent-2)}
   </div>
 </footer>
 
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('.langsw a[data-lang]');
+  if(a){try{localStorage.setItem('lang',a.getAttribute('data-lang'));}catch(err){}}
+});
+</script>
 </body>
 </html>
