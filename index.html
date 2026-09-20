@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +7,19 @@
 (function(){try{
   if(localStorage.getItem('lang'))return;
   var l=(navigator.language||navigator.userLanguage||'').toLowerCase();
-  if(l.indexOf('ru')===0)return;
+  if(l.indexOf('ru')===0){location.replace('/ru/');return;}
   if(l.indexOf('pt')===0){location.replace('/pt/');return;}
-  location.replace('/en/');
 }catch(e){}})();
 </script>
 
-<title>Илья Поспелов — автоматизация поддержки для SaaS</title>
-<link rel="alternate" hreflang="ru" href="https://iliasupport.com/">
-<link rel="alternate" hreflang="en" href="https://iliasupport.com/en/">
+<title>Ilia Pospelov — Support Automation for SaaS Teams</title>
+<link rel="alternate" hreflang="en" href="https://iliasupport.com/">
+<link rel="alternate" hreflang="ru" href="https://iliasupport.com/ru/">
 <link rel="alternate" hreflang="pt" href="https://iliasupport.com/pt/">
-<link rel="alternate" hreflang="x-default" href="https://iliasupport.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://iliasupport.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* Hallmark · genre: editorial · macrostructure: Manifesto · theme: Brutal · enrichment: none · nav: N1a · footer: Ft2
  * pre-emit critique: P5 H4 E4 S4 R4 V5
@@ -40,9 +39,9 @@
   --on-accent:oklch(0.975 0.012 var(--hue));
   --on-ink:   oklch(0.955 0.012 var(--hue));
 
-  --font-display:"Rubik",system-ui,-apple-system,sans-serif;
-  --font-body:"Rubik",system-ui,-apple-system,sans-serif;
-  --font-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --font-display:"Archivo",-apple-system,"Arial Black",sans-serif;
+  --font-body:"Archivo",-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono:"Space Mono",ui-monospace,Menlo,Consolas,monospace;
 
   /* type scale */
   --t-hero:  clamp(2.3rem, 7vw, 5.1rem);
@@ -73,7 +72,7 @@ body{
 /* display type: roman, heavy, uppercase, tight */
 .display{
   font-family:var(--font-display);font-weight:900;text-transform:uppercase;
-  line-height:0.94;letter-spacing:-.02em;overflow-wrap:break-word;min-width:0;
+  line-height:0.94;letter-spacing:-.02em;overflow-wrap:anywhere;min-width:0;
   text-wrap:balance;
 }
 .meta{font-family:var(--font-mono);font-size:var(--t-meta);letter-spacing:.06em;text-transform:uppercase}
@@ -255,20 +254,21 @@ footer .wordmark b{color:var(--accent-2)}
 <nav class="nav">
   <div class="wrap">
     <span class="wordmark">IL<b>IA</b>&nbsp;POSPELOV<b>.</b></span>
-    <span class="langsw"><b>RU</b><span aria-hidden="true">/</span><a href="/en/" hreflang="en" data-lang="en">EN</a><span aria-hidden="true">/</span><a href="/pt/" hreflang="pt" data-lang="pt">PT</a></span>
+    <span class="langsw"><b>EN</b><span aria-hidden="true">/</span><a href="/ru/" hreflang="ru" data-lang="ru">RU</a><span aria-hidden="true">/</span><a href="/pt/" hreflang="pt" data-lang="pt">PT</a></span>
     
-    <a class="act" href="#contact">Разбор очереди →</a>
+    
+    <a class="act" href="#contact">Get a teardown →</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <p class="kicker">AI-автоматизация поддержки · для небольших SaaS-команд</p>
-    <h1 class="display">Вы <span class="hl">больше не открываете</span> инбокс.</h1>
-    <p class="sub">AI-поддержку можно поднять за один день — дальше начинаются проблемы: расхождение с фактами, неверный тон оф войс, пропущенные тикеты. Я забираю поддержку целиком: разбираюсь в продукте и текущем сетапе, достраиваю недостающее, задаю стандарты качества ответов.</p>
+    <p class="kicker">AI support automation · for small SaaS teams</p>
+    <h1 class="display">You <span class="hl">stop opening</span> the inbox.</h1>
+    <p class="sub">AI support takes a day to stand up — the problems start after that: answers that drift from the facts, the wrong tone of voice, tickets that slip through. I take support off you entirely: I learn the product and the setup you already run, build the missing parts, and set the standard for answer quality.</p>
     <div class="cta">
-      <a class="btn solid" href="#contact">Получить разбор очереди</a>
-      <a class="text" href="#work">Как это работает ↓</a>
+      <a class="btn solid" href="#contact">Get a free queue teardown</a>
+      <a class="text" href="#work">See how it works ↓</a>
     </div>
   </div>
 </header>
@@ -276,7 +276,7 @@ footer .wordmark b{color:var(--accent-2)}
 
 <section class="proofbar">
   <div class="wrap">
-    <p class="meta">Десять лет в поддержке и QA</p>
+    <p class="meta">Ten years in support and QA</p>
     <div class="logos">
       <span>VK (ex-Mail.ru Group)</span>
       <span>Ecommpay IT</span>
@@ -290,95 +290,96 @@ footer .wordmark b{color:var(--accent-2)}
     <div class="row">
       <div class="n">01</div>
       <div>
-        <h3 class="display">Разбор того, что уже стоит</h3>
-        <p>Какую пользу AI приносит на самом деле, а не по обещаниям вендора. Где уводит юзера в несуществующий функционал, а какие тикеты не берёт вообще.</p>
+        <h3 class="display">An audit of what already runs</h3>
+        <p>What the AI actually does for you, rather than what the vendor promised. Where it sends people to features that don&rsquo;t exist, and which tickets it never picks up at all.</p>
       </div>
     </div>
     <div class="row">
       <div class="n">02</div>
       <div>
-        <h3 class="display">То, что вендор не строит</h3>
-        <p>База знаний, которая обновляется с каждым релизом. Границы вместо уверенного вранья и маршрут эскалаций для сложных кейсов — этой части и не хватает, когда доля писем без человека застревает на двадцати процентах.</p>
+        <h3 class="display">The parts a vendor won&rsquo;t build</h3>
+        <p>A knowledge base that updates with every release. Limits instead of confident invention, and an escalation path for the hard cases — the missing half when tickets closed without a person stall at twenty percent.</p>
       </div>
     </div>
     <div class="row">
       <div class="n">03</div>
       <div>
-        <h3 class="display">Мозг растёт с каждым тикетом</h3>
-        <p>Мозг AI-поддержки растёт с каждым тикетом, а не из ревизии раз в квартал. Моя работа — расширять его понимание продукта и подтягивать качество там, где юзеры начинают чувствовать машину. Ваши часы уходят в маркетинг и выкатку фич.</p>
+        <h3 class="display">The brain grows with every ticket</h3>
+        <p>The brain of your AI support grows with every ticket, not through a quarterly review. My work is widening what it understands about the product and lifting quality wherever people start to feel the machine. Your hours go to marketing and shipping.</p>
       </div>
     </div>
   </section>
 </main>
 
+
 <section class="band">
   <div class="wrap inner">
-    <h2 class="display" style="font-size:var(--t-h2);max-width:14ch">Узнаёте?</h2>
+    <h2 class="display" style="font-size:var(--t-h2);max-width:16ch">Sound familiar?</h2>
     <ul class="symptoms">
-      <li>AI отвечает уверенно и неправильно — клиенты злятся сильнее, чем от ожидания.</li>
-      <li>После релиза он рассказывает про старую версию, потому что базу никто не обновил.</li>
-      <li>Треть тикетов он не берёт — и это как раз самые тяжёлые.</li>
-      <li>Нового человека надо месяцами погружать в продукт. Машина знает его с первого дня.</li>
+      <li>AI answers confidently and wrongly — customers get angrier than they would from waiting.</li>
+      <li>After a release it describes the old version, because nobody updated the knowledge base.</li>
+      <li>It won&rsquo;t touch a third of the tickets — and those are the hard ones.</li>
+      <li>A new hire takes months to learn the product. The machine knows it on day one.</li>
     </ul>
-    <p class="after">Это и есть работа, которую я снимаю со стола.</p>
+    <p class="after">That&rsquo;s the work I take off the table.</p>
   </div>
 </section>
 
 
 <section class="bleed bleed-accent">
   <div class="wrap">
-    <h2 class="display">Клиенты благодарят за человечность. Отвечает модель.</h2>
-    <p class="lede">70% тикетов закрываются сами. В остальных человек направляет одной фразой — формулирует машина.</p>
+    <h2 class="display">Customers thank us for being human. A model writes the replies.</h2>
+    <p class="lede">70% of tickets close themselves. On the rest a person steers with one line &mdash; the machine writes it.</p>
     <div class="quotes">
-      <blockquote><q>Тех. поддержка отвечает мгновенно и реально помогает</q><cite><span class="stars">★★★★★</span> · Google Play · RU</cite></blockquote>
-      <blockquote><q>The support I received was quick, clear and sorted the issue straight away</q><cite><span class="stars">★★★★★</span> · Google Play · EN</cite></blockquote>
-      <blockquote><q>Suporte rápido e eficiente</q><cite><span class="stars">★★★★★</span> · Google Play · PT</cite></blockquote>
+      <blockquote><q>The support I received was quick, clear and sorted the issue straight away</q><cite><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; Google Play &middot; EN</cite></blockquote>
+      <blockquote><q>Customer support walked me through it step by step. Excellent service</q><cite><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; Google Play &middot; IT</cite></blockquote>
+      <blockquote><q>Suporte r&aacute;pido e eficiente</q><cite><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; Google Play &middot; PT</cite></blockquote>
     </div>
-    <p class="human">Это публичные отзывы, а не письма в личку. Рейтинг держит конверсию в установку — и поддержка начинает приносить звёзды, а не только расходы.</p>
+    <p class="human">These are public reviews, not private thank-you notes. The rating drives install conversion &mdash; support starts earning stars, not just costs.</p>
   </div>
 </section>
 
 <section class="bleed bleed-ink">
   <div class="wrap">
-    <h2 class="display">Разобрать. Достроить. Вести.</h2>
-    <p class="lede">Без презентаций. Всё проверяется на ваших тикетах, прежде чем дойдёт до клиента.</p>
+    <h2 class="display">Map. Build. Run.</h2>
+    <p class="lede">No slide deck. Everything is proven against your own tickets before it reaches a customer.</p>
   </div>
 </section>
 
 <div class="wrap">
   <section class="slab">
-    <p class="tag meta">Как выглядит работа</p>
-    <h2 class="display">Система работает каждый день. На живом продукте, а не на демо.</h2>
-    <p>Продукту больше десяти лет: около тысячи обращений в месяц и пятисот отзывов. Имя назвать не могу — NDA. Показываю механику.</p>
+    <p class="tag meta">What the work looks like</p>
+    <h2 class="display">The system runs every day. On a live product, not a demo.</h2>
+    <p>The product is over ten years old: about a thousand tickets and five hundred reviews a month. I can&rsquo;t name it &mdash; NDA. I can show the mechanics.</p>
     <div class="flow">
-      <div class="step"><b>Тикет</b>приходит в очередь</div>
+      <div class="step"><b>Ticket</b>arrives in the queue</div>
       <span class="arr" aria-hidden="true"></span>
-      <div class="step"><b>Контекст</b>история, чек, лог, известные баги — до ответа</div>
+      <div class="step"><b>Context</b>history, receipt, logs, known bugs — before any reply</div>
       <span class="arr" aria-hidden="true"></span>
-      <div class="step"><b>Черновик</b>факты из базы, а не придуманные</div>
+      <div class="step"><b>Draft</b>facts from the base, not invented</div>
       <span class="arr" aria-hidden="true"></span>
-      <div class="step"><b>Решение</b>шаблонное уходит само, остальное — человек</div>
+      <div class="step"><b>Decision</b>boilerplate goes on its own, the rest a person sends</div>
       <span class="arr" aria-hidden="true"></span>
-      <div class="step loop"><b>Правило</b>каждая правка возвращается в базу</div>
+      <div class="step loop"><b>Rule</b>every correction goes back into the base</div>
     </div>
-    <p class="after" style="margin-bottom:var(--s-8)">Последний шаг возвращается в первый. Этим система и живёт.</p>
-    <p><b>Автоматизируется не отправка, а составление.</b> Часы уходят не на «нажать отправить», а на «прочитать всю переписку, найти чек, понять версию, не соврать про цену».</p>
-    <p style="margin-top:var(--s-4)"><b>Границы заданы списком.</b> Без человека уходят пять типов писем, перечисленных поимённо. Остальное идёт на утверждение.</p>
-    <p class="ghlink" style="margin-top:var(--s-6)">Ещё я спроектировал и веду конвейер регрессионного тестирования — тот же принцип. Репозитории под NDA, но работа видна: <a href="https://github.com/luxartpoi">GitHub</a>.</p>
+    <p class="after" style="margin-bottom:var(--s-8)">The last step feeds the first. That loop is what keeps it alive.</p>
+    <p><b>What gets automated is the writing, not the sending.</b> The hours don&rsquo;t go into pressing send — they go into &ldquo;read the whole thread, find the receipt, work out their version, don&rsquo;t misquote the price&rdquo;.</p>
+    <p style="margin-top:var(--s-4)"><b>The limits are a list.</b> Five kinds of email may go out without a person, named one by one. Everything else waits for approval.</p>
+    <p class="ghlink" style="margin-top:var(--s-6)">I also designed and run a regression-testing pipeline on the same principle. The repositories are under NDA, but the work shows: <a href="https://github.com/luxartpoi">GitHub</a>.</p>
   </section>
 
   <section class="slab" style="border-bottom:0">
-    <p class="tag meta">Кто я</p>
-    <h2 class="display">Прирождённый саппорт.</h2>
-    <p>Сгенерировать ответ сегодня — секунды. Услышать за письмом настоящую боль — по-прежнему нет: человек редко пишет, что у него сломалось, он пишет, что злится. Начинал на телефонной линии, дважды строил поддержку как руководитель — вижу и пользователя, и команду. Когда ломается, сигнал уходит владельцу продукта, пока это ещё информация, а не поток жалоб. С AI в поддержке работаю с первых дней. Удалённо, RU / EN / PT.</p>
+    <p class="tag meta">Who I am</p>
+    <h2 class="display">Natural born helper.</h2>
+    <p>Generating a reply now takes seconds. Hearing the actual pain behind it still doesn&rsquo;t: people rarely write what broke &mdash; they write that they&rsquo;re angry. I started on the phone line and have built support as its head twice, so I see both the user and the team. When something breaks, the signal reaches the product owner while it&rsquo;s still information rather than a flood of complaints. I&rsquo;ve worked with AI in support since day one. Remote, EN / RU / PT.</p>
   </section>
 </div>
 
 <section class="close" id="contact">
   <div class="wrap">
-    <h2>Пришлите последние 100 тикетов.</h2>
-    <p class="lede" style="margin-top:var(--s-8);max-width:34ch">Вернётся разбор: сколько из них закрывается без человека, что ломает вашего нынешнего бота и во сколько часов чьей-то недели это обходится. Бесплатно, созвон не нужен.</p>
-    <a class="btn solid" href="mailto:hi@iliasupport.com?subject=%D0%A0%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D0%B8">Отправить тикеты →</a>
+    <h2>Send me your last 100 tickets.</h2>
+    <p class="lede" style="margin-top:var(--s-8);max-width:34ch">You get back what can be automated, what can&rsquo;t, and how much of someone&rsquo;s week it&rsquo;s worth. No charge, no call needed.</p>
+    <a class="btn solid" href="mailto:hi@iliasupport.com?subject=Support%20queue%20teardown">Send the tickets →</a>
     <a class="mail" href="mailto:hi@iliasupport.com">hi@iliasupport.com</a>
   </div>
 </section>
@@ -386,7 +387,7 @@ footer .wordmark b{color:var(--accent-2)}
 <footer>
   <div class="wrap">
     <span class="wordmark">IL<b>IA</b>&nbsp;POSPELOV<b>.</b></span>
-    <span class="meta">Автоматизация поддержки · удалённо · RU · EN · PT</span>
+    <span class="meta">Support automation · remote / worldwide · EN · RU · PT</span>
   </div>
 </footer>
 
