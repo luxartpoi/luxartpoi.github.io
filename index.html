@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ilia Pospelov — Support &amp; QA Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · genre: editorial · macrostructure: Manifesto · theme: Brutal · enrichment: none · nav: N1a · footer: Ft2
+ * pre-emit critique: P5 H4 E4 S4 R4 V5
+ */
+
+/* ---- Tokens (locked, OKLCH, single warm hue) ---- */
+:root{
+  --hue: 92;
+  --paper:    oklch(0.962 0.012 var(--hue));   /* warm off-white — never #fff */
+  --paper-2:  oklch(0.918 0.016 var(--hue));
+  --ink:      oklch(0.185 0.020 var(--hue));    /* warm near-black — never #000 */
+  --ink-2:    oklch(0.420 0.018 var(--hue));
+  --accent:   oklch(0.605 0.212 33);            /* vermilion — the one loud voice */
+  --accent-2: oklch(0.660 0.205 33);
+  --on-accent:oklch(0.975 0.012 var(--hue));
+  --on-ink:   oklch(0.955 0.012 var(--hue));
+
+  --font-display:"Archivo",-apple-system,"Arial Black",sans-serif;
+  --font-body:"Archivo",-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono:"Space Mono",ui-monospace,Menlo,Consolas,monospace;
+
+  /* type scale */
+  --t-hero:  clamp(2.75rem, 9.5vw, 7rem);
+  --t-h2:    clamp(1.9rem, 5vw, 3.4rem);
+  --t-num:   clamp(2.2rem, 6vw, 4.5rem);
+  --t-claim: clamp(1.15rem, 2.5vw, 1.85rem);
+  --t-body:  1.0625rem;
+  --t-meta:  0.8125rem;
+
+  /* 4pt spacing scale */
+  --s-2:8px; --s-3:12px; --s-4:16px; --s-6:24px; --s-8:32px;
+  --s-12:48px; --s-16:64px; --s-24:96px; --s-32:128px;
+
+  --rule: 4px;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--font-body);font-size:var(--t-body);line-height:1.5;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* display type: roman, heavy, uppercase, tight */
+.display{
+  font-family:var(--font-display);font-weight:900;text-transform:uppercase;
+  line-height:0.94;letter-spacing:-.02em;overflow-wrap:anywhere;min-width:0;
+  text-wrap:balance;
+}
+.meta{font-family:var(--font-mono);font-size:var(--t-meta);letter-spacing:.06em;text-transform:uppercase}
+a{color:inherit}
+::selection{background:var(--accent);color:var(--on-accent)}
+:focus-visible{outline:var(--rule) solid var(--accent);outline-offset:3px} /* instant, never animated */
+
+/* ---- Nav · N1a (wordmark + single action, heavy rule) ---- */
+.nav{border-bottom:var(--rule) solid var(--ink);background:var(--paper)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:var(--s-4)}
+.wordmark{font-family:var(--font-mono);font-weight:700;letter-spacing:.02em;font-size:1rem}
+.wordmark b{color:var(--accent)}
+.nav a.act{
+  font-family:var(--font-mono);font-weight:700;font-size:var(--t-meta);text-transform:uppercase;
+  letter-spacing:.06em;text-decoration:none;white-space:nowrap;
+  border-bottom:2px solid var(--accent);padding-bottom:2px;
+}
+.nav a.act:hover{color:var(--accent)}
+
+/* ---- Hero · Manifesto declaration (left-biased, content height) ---- */
+.hero{padding-block:var(--s-24) var(--s-16)}
+.hero .kicker{color:var(--ink-2);margin-bottom:var(--s-8)}
+.hero h1{font-size:var(--t-hero);max-width:15ch}
+.hero .hl{background:var(--accent);color:var(--on-accent);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero p.sub{
+  font-family:var(--font-mono);font-size:clamp(.95rem,1.6vw,1.15rem);line-height:1.6;
+  max-width:52ch;margin-top:var(--s-8);color:var(--ink-2);text-wrap:pretty;
+}
+
+/* buttons: solid block, hard offset shadow, scale-on-press */
+.btn{
+  display:inline-block;font-family:var(--font-mono);font-weight:700;text-transform:uppercase;
+  letter-spacing:.06em;font-size:var(--t-meta);text-decoration:none;white-space:nowrap;
+  padding:18px 30px;border:var(--rule) solid var(--ink);
+  transition:background var(--dur,.15s) var(--ease-out), translate .1s var(--ease-out), box-shadow .1s var(--ease-out);
+}
+.btn.solid{background:var(--accent);color:var(--on-accent);box-shadow:6px 6px 0 var(--ink)}
+.btn.solid:hover{background:var(--accent-2)}
+.btn.solid:active{translate:6px 6px;box-shadow:0 0 0 var(--ink)}
+.hero .cta{margin-top:var(--s-12);display:flex;gap:var(--s-6);flex-wrap:wrap;align-items:center}
+.hero .cta a.text{font-family:var(--font-mono);font-size:var(--t-meta);text-transform:uppercase;letter-spacing:.06em;text-decoration:none}
+.hero .cta a.text:hover{color:var(--accent)}
+
+/* ---- Services · heavy ordinal list, NOT a 3-col card grid ---- */
+.list{border-top:var(--rule) solid var(--ink)}
+.row{
+  display:grid;grid-template-columns:minmax(0,4rem) minmax(0,1fr);gap:var(--s-6) var(--s-8);
+  align-items:start;padding-block:var(--s-12);border-bottom:2px solid var(--ink);
+}
+.row .n{font-family:var(--font-display);font-weight:900;font-size:var(--t-num);color:var(--accent);line-height:.9;font-variant-numeric:tabular-nums}
+.row h3{font-size:var(--t-h2);margin-bottom:var(--s-4)}
+.row p{max-width:52ch;color:var(--ink-2);line-height:1.55;text-wrap:pretty;font-size:clamp(1rem,1.4vw,1.15rem)}
+
+/* ---- Bleed blocks (dividers are colour, not hairlines) ---- */
+.bleed{padding-block:var(--s-24)}
+.bleed-ink{background:var(--ink);color:var(--on-ink)}
+.bleed-accent{background:var(--accent);color:var(--on-accent)}
+.bleed h2{font-size:var(--t-h2);max-width:18ch;margin-bottom:var(--s-8)}
+.bleed .lede{font-size:var(--t-claim);line-height:1.35;max-width:30ch;text-wrap:balance}
+
+/* process: three big claims in a line that wraps to one column on mobile */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-8);margin-top:var(--s-8)}
+.steps .step .k{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:clamp(1.6rem,3.5vw,2.6rem);line-height:1;letter-spacing:-.02em}
+.steps .step .k em{font-style:normal;color:var(--accent-2)}
+.steps .step p{font-family:var(--font-mono);font-size:var(--t-meta);line-height:1.6;margin-top:var(--s-4);color:oklch(0.78 0.012 var(--hue))}
+
+/* proof + about on paper */
+.slab{padding-block:var(--s-24);border-bottom:2px solid var(--ink)}
+.slab .tag{color:var(--accent);margin-bottom:var(--s-6)}
+.slab h2{font-size:var(--t-h2);max-width:20ch;margin-bottom:var(--s-6)}
+.slab p{max-width:56ch;color:var(--ink-2);line-height:1.6;font-size:clamp(1rem,1.4vw,1.15rem);text-wrap:pretty}
+
+/* ---- Final CTA · oversized block far below the fold ---- */
+.close{background:var(--accent);color:var(--on-accent);padding-block:var(--s-32)}
+.close h2{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:clamp(2rem,6vw,4.5rem);line-height:.96;letter-spacing:-.02em;max-width:16ch;text-wrap:balance}
+.close .btn.solid{background:var(--ink);color:var(--on-ink);border-color:var(--ink);box-shadow:6px 6px 0 oklch(0.185 0.02 var(--hue) / .35);margin-top:var(--s-12)}
+.close .btn.solid:hover{background:oklch(0.26 0.02 var(--hue))}
+.close .mail{display:block;margin-top:var(--s-8);font-family:var(--font-mono);font-weight:700;font-size:clamp(1rem,2.2vw,1.5rem);text-decoration:none;color:var(--on-accent)}
+.close .mail:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ---- Footer · Ft2 inline single line ---- */
+footer{background:var(--ink);color:var(--on-ink)}
+footer .wrap{display:flex;gap:var(--s-6);flex-wrap:wrap;justify-content:space-between;align-items:center;padding-block:var(--s-8)}
+footer .meta{color:oklch(0.72 0.012 var(--hue))}
+footer .wordmark b{color:var(--accent-2)}
+
+/* ---- Hero entrance: one orchestrated reveal, reduced-motion safe ---- */
+@media (prefers-reduced-motion: no-preference){
+  .hero h1,.hero .sub,.hero .cta{animation:rise .6s var(--ease-out) both}
+  .hero .sub{animation-delay:.08s}
+  .hero .cta{animation-delay:.16s}
+  @keyframes rise{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+}
+
+/* ---- Mobile ---- */
+@media (max-width:760px){
+  .steps{grid-template-columns:1fr;gap:var(--s-6)}
+  .row{grid-template-columns:1fr;gap:var(--s-3)}
+  .row .n{font-size:clamp(2rem,12vw,3rem)}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="wordmark">ILIA&nbsp;POSPELOV<b>.</b></span>
+    <a class="act" href="#contact">Book a call →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker meta">Support &amp; QA automation — for SaaS teams</p>
+    <h1 class="display">Stop paying people to do the <span class="hl">same thing</span> twice.</h1>
+    <p class="sub">Your team runs the same regression checks by hand every release and answers the same tickets over and over. I turn that repeating work into pipelines that run themselves.</p>
+    <div class="cta">
+      <a class="btn solid" href="#contact">Book a 20-min call</a>
+      <a class="text" href="#work">See how it works ↓</a>
+    </div>
+  </div>
+</header>
+
+<main id="work" class="wrap">
+  <section class="list">
+    <div class="row">
+      <div class="n">01</div>
+      <div>
+        <h3 class="display">Regression-test factories</h3>
+        <p>Manual, release-blocking QA becomes a pipeline. Fewer regressions ship. Releases stop waiting on a human clicking through the same checks — and QA time goes to testing that actually needs a brain.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">02</div>
+      <div>
+        <h3 class="display">AI support automation</h3>
+        <p>Repetitive tickets get deflected. The rest get triaged. Your agents get AI tooling instead of copy-paste. The queue stops growing faster than you can hire against it.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="n">03</div>
+      <div>
+        <h3 class="display">Support &amp; QA ops</h3>
+        <p>A function that scales without adding people one-for-one — the process, the tooling, and the automation underneath it. Built to run without me, not to keep me on retainer.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="bleed bleed-ink">
+  <div class="wrap">
+    <h2 class="display">Map. Automate. Hand off.</h2>
+    <p class="lede">No slide deck. I build the system, prove it on your real cases, and leave it running.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="k"><em>01</em> Map</div>
+        <p>Find the work that repeats and quietly costs the most — the manual test cycles, the recurring tickets, the hand-done processes.</p>
+      </div>
+      <div class="step">
+        <div class="k"><em>02</em> Automate</div>
+        <p>Design and build the pipeline or AI layer that does that work by itself, and prove it against your real cases.</p>
+      </div>
+      <div class="step">
+        <div class="k"><em>03</em> Hand&nbsp;off</div>
+        <p>Your team owns it and runs it without me. You keep the savings — not a dependency on a consultant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="slab">
+    <p class="tag meta">What I'm building right now</p>
+    <h2 class="display">A regression-test factory for a cross-platform SaaS.</h2>
+    <p>Automating the manual test cycles that used to eat human hours every release — designing the pipeline that runs the checks a QA team was doing by hand. This isn't a case study I'm dressing up. It's what I do day to day.</p>
+  </section>
+
+  <section class="slab" style="border-bottom:0">
+    <p class="tag meta">Who I am</p>
+    <h2 class="display">Ten years inside support and QA — not advising from the outside.</h2>
+    <p>I design the system and build the automation myself, then hand it over working. I work remotely with teams anywhere, and I operate in English, Russian, and Portuguese.</p>
+  </section>
+</div>
+
+<section class="close" id="contact">
+  <div class="wrap">
+    <h2>Got repetitive support or QA work eating your team's hours?</h2>
+    <a class="btn solid" href="mailto:lux_art@yahoo.com">Book a 20-min call →</a>
+    <a class="mail" href="mailto:lux_art@yahoo.com">lux_art@yahoo.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="wordmark">ILIA&nbsp;POSPELOV<b>.</b></span>
+    <span class="meta">Support &amp; QA automation · remote / worldwide · EN · RU · PT</span>
+  </div>
+</footer>
+
+</body>
+</html>
