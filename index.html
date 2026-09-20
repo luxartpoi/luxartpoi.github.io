@@ -21,6 +21,7 @@
   --ink-2:    oklch(0.420 0.018 var(--hue));
   --accent:   oklch(0.605 0.212 33);            /* vermilion — the one loud voice */
   --accent-2: oklch(0.660 0.205 33);
+  --accent-ink:oklch(0.505 0.195 33);          /* accent darkened for small text on paper — AA */
   --on-accent:oklch(0.975 0.012 var(--hue));
   --on-ink:   oklch(0.955 0.012 var(--hue));
 
@@ -69,7 +70,7 @@ a{color:inherit}
 .nav{border-bottom:var(--rule) solid var(--ink);background:var(--paper)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:var(--s-4)}
 .wordmark{font-family:var(--font-mono);font-weight:700;letter-spacing:.02em;font-size:1rem}
-.wordmark b{color:var(--accent)}
+.wordmark b{color:var(--accent-ink)}
 .nav a.act{
   font-family:var(--font-mono);font-weight:700;font-size:var(--t-meta);text-transform:uppercase;
   letter-spacing:.06em;text-decoration:none;white-space:nowrap;
@@ -164,7 +165,7 @@ footer .wordmark b{color:var(--accent-2)}
 
 <nav class="nav">
   <div class="wrap">
-    <span class="wordmark">ILIA&nbsp;POSPELOV<b>.</b></span>
+    <span class="wordmark">IL<b>IA</b>&nbsp;POSPELOV<b>.</b></span>
     <a class="act" href="#contact">Book a call →</a>
   </div>
 </nav>
@@ -252,7 +253,7 @@ footer .wordmark b{color:var(--accent-2)}
 
 <footer>
   <div class="wrap">
-    <span class="wordmark">ILIA&nbsp;POSPELOV<b>.</b></span>
+    <span class="wordmark">IL<b>IA</b>&nbsp;POSPELOV<b>.</b></span>
     <span class="meta">Support &amp; QA automation · remote / worldwide · EN · RU · PT</span>
   </div>
 </footer>
