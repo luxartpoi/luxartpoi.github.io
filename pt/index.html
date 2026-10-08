@@ -150,6 +150,12 @@ a{color:inherit}
 .slab{padding-block:var(--s-24);border-bottom:2px solid var(--ink)}
 .slab .tag{color:var(--accent);margin-bottom:var(--s-6)}
 .slab h2{font-size:var(--t-h2);max-width:20ch;margin-bottom:var(--s-6)}
+.shots{margin:var(--s-8) 0 var(--s-12)}
+.shots a{display:block;border:var(--rule) solid var(--ink);background:var(--ink)}
+.shots img{display:block;width:100%;height:auto}
+.shots .cap{max-width:64ch;margin:var(--s-3) 0 var(--s-8);font-size:var(--t-meta);line-height:1.55;color:var(--ink-2)}
+.shots .cap b{color:var(--ink)}
+.shots figcaption{margin-top:calc(var(--s-6) * -1);color:var(--ink-2)}
 .slab p{max-width:56ch;color:var(--ink-2);line-height:1.6;font-size:clamp(1rem,1.4vw,1.15rem);text-wrap:pretty}
 
 /* ---- Final CTA · oversized block far below the fold ---- */
@@ -507,6 +513,13 @@ footer .wordmark b{color:var(--accent-2)}
       <div class="step loop"><b>Regra</b>cada corre&ccedil;&atilde;o volta para a base</div>
     </div>
     <p class="after" style="margin-bottom:var(--s-8)">O &uacute;ltimo passo alimenta o primeiro. &Eacute; disso que o sistema vive.</p>
+    <figure class="shots">
+      <a href="/img/desk/template-en.webp"><img src="/img/desk/template-en.webp" width="1800" height="1125" loading="lazy" alt="Ticket no helpdesk: uma cliente escreve em alem&atilde;o pedindo para excluir a conta; o rascunho &eacute; um modelo nomeado adaptado ao alem&atilde;o, confian&ccedil;a de 85%"></a>
+      <p class="cap"><b>Um dos modelos nomeados.</b> Uma cliente escreve em alem&atilde;o pedindo para excluir a conta. O modelo &eacute; adaptado ao idioma e ao tom dela &mdash; esse tipo pode sair sozinho.</p>
+      <a href="/img/desk/draft-en.webp"><img src="/img/desk/draft-en.webp" width="1800" height="1125" loading="lazy" alt="Ticket no helpdesk: um rascunho de resposta com as fontes da base de conhecimento em que se apoiou, incluindo um caso resolvido, e a confian&ccedil;a"></a>
+      <p class="cap"><b>O resto espera uma pessoa.</b> O rascunho mostra em que se apoiou &mdash; aqui, um caso resolvido da base &mdash; e o quanto est&aacute; seguro. A pessoa edita, reescreve com uma frase ou envia.</p>
+      <figcaption class="meta">Mostrado em t&oacute;picos p&uacute;blicos do f&oacute;rum do Joplin: os tickets do produto real ficam sob NDA. Sem v&iacute;nculo com o Joplin.</figcaption>
+    </figure>
     <p><b>O que se automatiza &eacute; a escrita, n&atilde;o o envio.</b> As horas n&atilde;o v&atilde;o em apertar enviar: v&atilde;o em &ldquo;ler a conversa toda, achar o comprovante, entender a vers&atilde;o, n&atilde;o errar o pre&ccedil;o&rdquo;.</p>
     <p style="margin-top:var(--s-4)"><b>Os limites s&atilde;o uma lista.</b> Cinco tipos de e-mail podem sair sem uma pessoa, nomeados um a um. O resto espera aprova&ccedil;&atilde;o.</p>
     <p class="ghlink" style="margin-top:var(--s-6)">Tamb&eacute;m projetei e conduzo um pipeline de testes de regress&atilde;o &mdash; mesmo princ&iacute;pio. Os reposit&oacute;rios est&atilde;o sob NDA, mas o trabalho aparece: <a href="https://github.com/luxartpoi">GitHub</a>.</p>

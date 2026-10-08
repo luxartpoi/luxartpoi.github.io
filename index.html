@@ -159,6 +159,12 @@ a{color:inherit}
 .slab{padding-block:var(--s-24);border-bottom:2px solid var(--ink)}
 .slab .tag{color:var(--accent);margin-bottom:var(--s-6)}
 .slab h2{font-size:var(--t-h2);max-width:20ch;margin-bottom:var(--s-6)}
+.shots{margin:var(--s-8) 0 var(--s-12)}
+.shots a{display:block;border:var(--rule) solid var(--ink);background:var(--ink)}
+.shots img{display:block;width:100%;height:auto}
+.shots .cap{max-width:64ch;margin:var(--s-3) 0 var(--s-8);font-size:var(--t-meta);line-height:1.55;color:var(--ink-2)}
+.shots .cap b{color:var(--ink)}
+.shots figcaption{margin-top:calc(var(--s-6) * -1);color:var(--ink-2)}
 .slab p{max-width:56ch;color:var(--ink-2);line-height:1.6;font-size:clamp(1rem,1.4vw,1.15rem);text-wrap:pretty}
 
 /* ---- Final CTA · oversized block far below the fold ---- */
@@ -519,6 +525,13 @@ footer .wordmark b{color:var(--accent-2)}
       <div class="step loop"><b>Rule</b>every correction goes back into the base</div>
     </div>
     <p class="after" style="margin-bottom:var(--s-8)">The last step feeds the first. That loop is what keeps it alive.</p>
+    <figure class="shots">
+      <a href="/img/desk/template-en.webp"><img src="/img/desk/template-en.webp" width="1800" height="1125" loading="lazy" alt="Helpdesk ticket: a customer writes in German asking to delete her account; the draft is a named template adapted to German, confidence 85%"></a>
+      <p class="cap"><b>One of the named templates.</b> A customer writes in German asking to delete her account. The template is adapted to her language and tone &mdash; this kind may go out on its own.</p>
+      <a href="/img/desk/draft-en.webp"><img src="/img/desk/draft-en.webp" width="1800" height="1125" loading="lazy" alt="Helpdesk ticket: a draft reply with the knowledge-base sources it relied on, including a solved case, and its confidence"></a>
+      <p class="cap"><b>Everything else waits for a person.</b> The draft shows what it relied on &mdash; here a solved case from the base &mdash; and how sure it is. A person edits it, rewrites it with one line, or sends it.</p>
+      <figcaption class="meta">Shown on public Joplin community threads: the real product&rsquo;s tickets stay under NDA. Not affiliated with Joplin.</figcaption>
+    </figure>
     <p><b>What gets automated is the writing, not the sending.</b> The hours don&rsquo;t go into pressing send — they go into &ldquo;read the whole thread, find the receipt, work out their version, don&rsquo;t misquote the price&rdquo;.</p>
     <p style="margin-top:var(--s-4)"><b>The limits are a list.</b> Five kinds of email may go out without a person, named one by one. Everything else waits for approval.</p>
     <p class="ghlink" style="margin-top:var(--s-6)">I also designed and run a regression-testing pipeline on the same principle. The repositories are under NDA, but the work shows: <a href="https://github.com/luxartpoi">GitHub</a>.</p>
