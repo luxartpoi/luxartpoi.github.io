@@ -160,11 +160,13 @@ a{color:inherit}
 .slab .tag{color:var(--accent);margin-bottom:var(--s-6)}
 .slab h2{font-size:var(--t-h2);max-width:20ch;margin-bottom:var(--s-6)}
 .shots{margin:var(--s-8) 0 var(--s-12)}
-.shots a{display:block;border:var(--rule) solid var(--ink);background:var(--ink)}
+.shots .pair{display:grid;grid-template-columns:2.16fr 1fr;gap:var(--s-4);align-items:start}
+.shots a{display:block}
 .shots img{display:block;width:100%;height:auto}
-.shots .cap{max-width:64ch;margin:var(--s-3) 0 var(--s-8);font-size:var(--t-meta);line-height:1.55;color:var(--ink-2)}
+.shots .cap{max-width:60ch;margin:var(--s-6) 0 var(--s-2);color:var(--ink-2)}
 .shots .cap b{color:var(--ink)}
-.shots figcaption{margin-top:calc(var(--s-6) * -1);color:var(--ink-2)}
+.shots figcaption{color:var(--ink-2)}
+@media (max-width:720px){.shots .pair{grid-template-columns:1fr}}
 .slab p{max-width:56ch;color:var(--ink-2);line-height:1.6;font-size:clamp(1rem,1.4vw,1.15rem);text-wrap:pretty}
 
 /* ---- Final CTA · oversized block far below the fold ---- */
@@ -307,7 +309,7 @@ footer .wordmark b{color:var(--accent-2)}
   <div class="wrap">
     <p class="kicker">AI support automation · for small SaaS teams</p>
     <h1 class="display">You <span class="hl">stop opening</span> the inbox.</h1>
-    <p class="sub">AI support takes a day to stand up — the problems start after that: answers that drift from the facts, the wrong tone of voice, tickets that slip through. I take support off you entirely: I learn the product and the setup you already run, build the missing parts, and set the standard for answer quality.</p>
+    <p class="sub">AI support is a day to switch on and months to keep right. I run it for you: facts, tone, and the tickets that slip through.</p>
     <div class="cta">
       <a class="btn solid" href="#contact">Get a free queue teardown</a>
       <a class="text" href="#work">See how it works ↓</a>
@@ -337,21 +339,21 @@ footer .wordmark b{color:var(--accent-2)}
       <div class="n">01</div>
       <div>
         <h3 class="display">An audit of what already runs</h3>
-        <p>What the AI actually does for you, rather than what the vendor promised. Where it sends people to features that don&rsquo;t exist, and which tickets it never picks up at all.</p>
+        <p>What your AI really answers &mdash; and what it never picks up.</p>
       </div>
     </div>
     <div class="row">
       <div class="n">02</div>
       <div>
         <h3 class="display">The parts a vendor won&rsquo;t build</h3>
-        <p>A knowledge base that updates with every release. Limits instead of confident invention, and an escalation path for the hard cases — the missing half when tickets closed without a person stall at twenty percent.</p>
+        <p>A knowledge base that keeps up with releases, limits instead of invention, a path for the hard cases.</p>
       </div>
     </div>
     <div class="row">
       <div class="n">03</div>
       <div>
         <h3 class="display">The brain grows with every ticket</h3>
-        <p>The brain of your AI support grows with every ticket, not through a quarterly review. My work is widening what it understands about the product and lifting quality wherever people start to feel the machine. Your hours go to marketing and shipping.</p>
+        <p>Every ticket teaches it. Your hours go to the product.</p>
       </div>
     </div>
   </section>
@@ -466,11 +468,10 @@ footer .wordmark b{color:var(--accent-2)}
       <rect x="90" y="90" width="8" height="8" fill="var(--ink)"/>
     </svg>
       <ul class="wkey">
-        <li><span class="sw done" aria-hidden="true"></span><div><b>30</b><span>close themselves. Nobody opens them, nobody types an answer.</span></div></li>
-        <li><span class="sw human" aria-hidden="true"></span><div><b>70</b><span>reach a person &mdash; with the history, the receipt and the version already attached, and a draft reply ready.</span></div></li>
+        <li><span class="sw done" aria-hidden="true"></span><div><b>30</b><span>close themselves.</span></div></li>
+        <li><span class="sw human" aria-hidden="true"></span><div><b>70</b><span>reach a person &mdash; with context and a draft ready.</span></div></li>
       </ul>
     </div>
-    <p class="after">The point isn&rsquo;t answering faster. A person only touches the tickets that need one &mdash; and starts from a draft, not a blank page.</p>
   </div>
 </section>
 
@@ -481,9 +482,7 @@ footer .wordmark b{color:var(--accent-2)}
       <li>AI answers confidently and wrongly — customers get angrier than they would from waiting.</li>
       <li>After a release it describes the old version, because nobody updated the knowledge base.</li>
       <li>It won&rsquo;t touch a third of the tickets — and those are the hard ones.</li>
-      <li>A new hire takes months to learn the product. The machine knows it on day one.</li>
     </ul>
-    <p class="after">That&rsquo;s the work I take off the table.</p>
   </div>
 </section>
 
@@ -491,13 +490,12 @@ footer .wordmark b{color:var(--accent-2)}
 <section class="bleed bleed-accent">
   <div class="wrap">
     <h2 class="display">Customers thank us for being human. A model writes the replies.</h2>
-    <p class="lede">About 30% of tickets close themselves. On the rest a person steers with one line &mdash; the machine writes it.</p>
     <div class="quotes">
       <blockquote><q>The support I received was quick, clear and sorted the issue straight away</q><cite><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; Google Play &middot; EN</cite></blockquote>
       <blockquote><q>Customer support walked me through it step by step. Excellent service</q><cite><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; Google Play &middot; IT</cite></blockquote>
       <blockquote><q>Suporte r&aacute;pido e eficiente</q><cite><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; Google Play &middot; PT</cite></blockquote>
     </div>
-    <p class="human">These are public reviews, not private thank-you notes. The rating drives install conversion &mdash; support starts earning stars, not just costs.</p>
+    <p class="human">Public reviews, not private thank-yous: support starts earning stars, not just costs.</p>
   </div>
 </section>
 
@@ -526,21 +524,20 @@ footer .wordmark b{color:var(--accent-2)}
     </div>
     <p class="after" style="margin-bottom:var(--s-8)">The last step feeds the first. That loop is what keeps it alive.</p>
     <figure class="shots">
-      <a href="/img/desk/template-en.webp"><img src="/img/desk/template-en.webp" width="1800" height="1125" loading="lazy" alt="Helpdesk ticket: a customer writes in German asking to delete her account; the draft is a named template adapted to German, confidence 85%"></a>
-      <p class="cap"><b>One of the named templates.</b> A customer writes in German asking to delete her account. The template is adapted to her language and tone &mdash; this kind may go out on its own.</p>
-      <a href="/img/desk/draft-en.webp"><img src="/img/desk/draft-en.webp" width="1800" height="1125" loading="lazy" alt="Helpdesk ticket: a draft reply with the knowledge-base sources it relied on, including a solved case, and its confidence"></a>
-      <p class="cap"><b>Everything else waits for a person.</b> The draft shows what it relied on &mdash; here a solved case from the base &mdash; and how sure it is. A person edits it, rewrites it with one line, or sends it.</p>
-      <figcaption class="meta">Shown on public Joplin community threads: the real product&rsquo;s tickets stay under NDA. Not affiliated with Joplin.</figcaption>
+      <div class="pair">
+        <a href="/img/desk/reply-en.webp"><img src="/img/desk/reply-en.webp" width="1276" height="1218" loading="lazy" alt="Reply box: a draft in German built from the 'Delete a Joplin Cloud account' template, confidence 90%"></a>
+        <a href="/img/desk/why-en.webp"><img src="/img/desk/why-en.webp" width="590" height="442" loading="lazy" alt="Why this reply: mood, confidence 90%, source is the template"></a>
+      </div>
+      <p class="cap"><b>Five kinds of email go out on their own</b> &mdash; like this one, from a template. Everything else waits for a person.</p>
+      <figcaption class="meta">Demo on public Joplin data &middot; real tickets are under NDA &middot; not affiliated with Joplin</figcaption>
     </figure>
-    <p><b>What gets automated is the writing, not the sending.</b> The hours don&rsquo;t go into pressing send — they go into &ldquo;read the whole thread, find the receipt, work out their version, don&rsquo;t misquote the price&rdquo;.</p>
-    <p style="margin-top:var(--s-4)"><b>The limits are a list.</b> Five kinds of email may go out without a person, named one by one. Everything else waits for approval.</p>
     <p class="ghlink" style="margin-top:var(--s-6)">I also designed and run a regression-testing pipeline on the same principle. The repositories are under NDA, but the work shows: <a href="https://github.com/luxartpoi">GitHub</a>.</p>
   </section>
 
   <section class="slab" style="border-bottom:0">
     <p class="tag meta">Who I am</p>
     <h2 class="display">Natural born helper.</h2>
-    <p>Generating a reply now takes seconds. Hearing the actual pain behind it still doesn&rsquo;t: people rarely write what broke &mdash; they write that they&rsquo;re angry. I started on the phone line and have built support as its head twice, so I see both the user and the team. When something breaks, the signal reaches the product owner while it&rsquo;s still information rather than a flood of complaints. I&rsquo;ve worked with AI in support since day one. Remote, EN / RU / PT.</p>
+    <p>A reply takes seconds to generate. Hearing the pain behind it still doesn&rsquo;t. I started on the phone line and built support twice as its head, so I see both the customer and the team. Remote &middot; EN / RU / PT.</p>
   </section>
 </div>
 

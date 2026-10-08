@@ -151,11 +151,13 @@ a{color:inherit}
 .slab .tag{color:var(--accent);margin-bottom:var(--s-6)}
 .slab h2{font-size:var(--t-h2);max-width:20ch;margin-bottom:var(--s-6)}
 .shots{margin:var(--s-8) 0 var(--s-12)}
-.shots a{display:block;border:var(--rule) solid var(--ink);background:var(--ink)}
+.shots .pair{display:grid;grid-template-columns:2.16fr 1fr;gap:var(--s-4);align-items:start}
+.shots a{display:block}
 .shots img{display:block;width:100%;height:auto}
-.shots .cap{max-width:64ch;margin:var(--s-3) 0 var(--s-8);font-size:var(--t-meta);line-height:1.55;color:var(--ink-2)}
+.shots .cap{max-width:60ch;margin:var(--s-6) 0 var(--s-2);color:var(--ink-2)}
 .shots .cap b{color:var(--ink)}
-.shots figcaption{margin-top:calc(var(--s-6) * -1);color:var(--ink-2)}
+.shots figcaption{color:var(--ink-2)}
+@media (max-width:720px){.shots .pair{grid-template-columns:1fr}}
 .slab p{max-width:56ch;color:var(--ink-2);line-height:1.6;font-size:clamp(1rem,1.4vw,1.15rem);text-wrap:pretty}
 
 /* ---- Final CTA · oversized block far below the fold ---- */
@@ -298,7 +300,7 @@ footer .wordmark b{color:var(--accent-2)}
   <div class="wrap">
     <p class="kicker">Automa&ccedil;&atilde;o de suporte com IA &middot; para times pequenos de SaaS</p>
     <h1 class="display">Voc&ecirc; <span class="hl">n&atilde;o abre mais</span> a caixa de entrada.</h1>
-    <p class="sub">Subir um suporte com IA leva um dia &mdash; os problemas come&ccedil;am depois: respostas que n&atilde;o batem com os fatos, tom de voz errado, tickets que passam batido. Eu assumo o suporte inteiro: entendo o produto e o que j&aacute; est&aacute; no ar, construo o que falta e defino o padr&atilde;o de qualidade das respostas.</p>
+    <p class="sub">Ligar um suporte com IA leva um dia; mant&ecirc;-lo certo leva meses. Eu cuido disso: fatos, tom e os tickets que passam batido.</p>
     <div class="cta">
       <a class="btn solid" href="#contact">Diagn&oacute;stico gratuito da fila</a>
       <a class="text" href="#work">Como funciona &darr;</a>
@@ -327,21 +329,21 @@ footer .wordmark b{color:var(--accent-2)}
       <div class="n">01</div>
       <div>
         <h3 class="display">Diagn&oacute;stico do que j&aacute; est&aacute; no ar</h3>
-        <p>Que valor a IA entrega de verdade, e n&atilde;o o que o fornecedor prometeu. Onde ela manda o usu&aacute;rio para uma fun&ccedil;&atilde;o que n&atilde;o existe, e quais tickets ela simplesmente n&atilde;o pega.</p>
+        <p>O que sua IA responde de verdade &mdash; e o que ela nem pega.</p>
       </div>
     </div>
     <div class="row">
       <div class="n">02</div>
       <div>
         <h3 class="display">O que o fornecedor n&atilde;o constr&oacute;i</h3>
-        <p>Uma base de conhecimento que se atualiza a cada release. Limites em vez de inven&ccedil;&atilde;o confiante e um caminho de escalonamento para os casos dif&iacute;ceis &mdash; &eacute; essa parte que falta quando a fatia de tickets resolvidos sem uma pessoa empaca nos vinte por cento.</p>
+        <p>Uma base que acompanha cada release, limites em vez de inven&ccedil;&atilde;o, um caminho para os casos dif&iacute;ceis.</p>
       </div>
     </div>
     <div class="row">
       <div class="n">03</div>
       <div>
         <h3 class="display">O c&eacute;rebro cresce a cada ticket</h3>
-        <p>O c&eacute;rebro do suporte com IA cresce a cada ticket atendido, e n&atilde;o numa revis&atilde;o trimestral. Meu trabalho &eacute; ampliar o que ele entende do produto e puxar a qualidade onde o usu&aacute;rio come&ccedil;a a sentir a m&aacute;quina. Suas horas v&atilde;o para marketing e para entregar features.</p>
+        <p>Cada ticket ensina. Suas horas v&atilde;o para o produto.</p>
       </div>
     </div>
   </section>
@@ -455,11 +457,10 @@ footer .wordmark b{color:var(--accent-2)}
       <rect x="90" y="90" width="8" height="8" fill="var(--ink)"/>
     </svg>
       <ul class="wkey">
-        <li><span class="sw done" aria-hidden="true"></span><div><b>30</b><span>se resolvem sozinhos. Ningu&eacute;m abre, ningu&eacute;m digita resposta.</span></div></li>
-        <li><span class="sw human" aria-hidden="true"></span><div><b>70</b><span>chegam a uma pessoa &mdash; com hist&oacute;rico, comprovante e vers&atilde;o j&aacute; anexados, e com um rascunho de resposta pronto.</span></div></li>
+        <li><span class="sw done" aria-hidden="true"></span><div><b>30</b><span>se resolvem sozinhos.</span></div></li>
+        <li><span class="sw human" aria-hidden="true"></span><div><b>70</b><span>chegam a uma pessoa &mdash; com contexto e um rascunho pronto.</span></div></li>
       </ul>
     </div>
-    <p class="after">N&atilde;o se trata de responder mais r&aacute;pido. A pessoa s&oacute; pega os tickets que precisam dela &mdash; e come&ccedil;a de um rascunho, n&atilde;o de uma p&aacute;gina em branco.</p>
   </div>
 </section>
 
@@ -470,22 +471,19 @@ footer .wordmark b{color:var(--accent-2)}
       <li>A IA responde com confian&ccedil;a e erra &mdash; o cliente fica mais irritado do que se tivesse esperado.</li>
       <li>Depois do release ela descreve a vers&atilde;o antiga, porque ningu&eacute;m atualizou a base.</li>
       <li>Um ter&ccedil;o dos tickets ela n&atilde;o pega &mdash; e s&atilde;o justamente os dif&iacute;ceis.</li>
-      <li>Uma pessoa nova leva meses para aprender o produto. A m&aacute;quina sabe desde o primeiro dia.</li>
     </ul>
-    <p class="after">&Eacute; esse trabalho que eu tiro da sua mesa.</p>
   </div>
 </section>
 
 <section class="bleed bleed-accent">
   <div class="wrap">
     <h2 class="display">Os clientes agradecem pelo atendimento humano. Quem responde &eacute; um modelo.</h2>
-    <p class="lede">Cerca de 30% dos tickets se resolvem sozinhos. No resto, uma pessoa d&aacute; a dire&ccedil;&atilde;o em uma frase &mdash; a m&aacute;quina escreve.</p>
     <div class="quotes">
       <blockquote><q>Suporte r&aacute;pido e eficiente</q><cite><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; Google Play &middot; PT</cite></blockquote>
       <blockquote><q>The support I received was quick, clear and sorted the issue straight away</q><cite><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; Google Play &middot; EN</cite></blockquote>
       <blockquote><q>Customer support walked me through it step by step. Excellent service</q><cite><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; Google Play &middot; IT</cite></blockquote>
     </div>
-    <p class="human">S&atilde;o avalia&ccedil;&otilde;es p&uacute;blicas, n&atilde;o e-mails privados. A nota sustenta a convers&atilde;o na loja &mdash; e o suporte passa a render estrelas, n&atilde;o s&oacute; custo.</p>
+    <p class="human">Avalia&ccedil;&otilde;es p&uacute;blicas: o suporte passa a render estrelas, n&atilde;o s&oacute; custo.</p>
   </div>
 </section>
 
@@ -514,21 +512,20 @@ footer .wordmark b{color:var(--accent-2)}
     </div>
     <p class="after" style="margin-bottom:var(--s-8)">O &uacute;ltimo passo alimenta o primeiro. &Eacute; disso que o sistema vive.</p>
     <figure class="shots">
-      <a href="/img/desk/template-en.webp"><img src="/img/desk/template-en.webp" width="1800" height="1125" loading="lazy" alt="Ticket no helpdesk: uma cliente escreve em alem&atilde;o pedindo para excluir a conta; o rascunho &eacute; um modelo nomeado adaptado ao alem&atilde;o, confian&ccedil;a de 85%"></a>
-      <p class="cap"><b>Um dos modelos nomeados.</b> Uma cliente escreve em alem&atilde;o pedindo para excluir a conta. O modelo &eacute; adaptado ao idioma e ao tom dela &mdash; esse tipo pode sair sozinho.</p>
-      <a href="/img/desk/draft-en.webp"><img src="/img/desk/draft-en.webp" width="1800" height="1125" loading="lazy" alt="Ticket no helpdesk: um rascunho de resposta com as fontes da base de conhecimento em que se apoiou, incluindo um caso resolvido, e a confian&ccedil;a"></a>
-      <p class="cap"><b>O resto espera uma pessoa.</b> O rascunho mostra em que se apoiou &mdash; aqui, um caso resolvido da base &mdash; e o quanto est&aacute; seguro. A pessoa edita, reescreve com uma frase ou envia.</p>
-      <figcaption class="meta">Mostrado em t&oacute;picos p&uacute;blicos do f&oacute;rum do Joplin: os tickets do produto real ficam sob NDA. Sem v&iacute;nculo com o Joplin.</figcaption>
+      <div class="pair">
+        <a href="/img/desk/reply-en.webp"><img src="/img/desk/reply-en.webp" width="1276" height="1218" loading="lazy" alt="Caixa de resposta: rascunho em alem&atilde;o feito a partir do modelo &lsquo;Delete a Joplin Cloud account&rsquo;, confian&ccedil;a de 90%"></a>
+        <a href="/img/desk/why-en.webp"><img src="/img/desk/why-en.webp" width="590" height="442" loading="lazy" alt="Por que esta resposta: humor, confian&ccedil;a de 90%, a fonte &eacute; o modelo"></a>
+      </div>
+      <p class="cap"><b>Cinco tipos de e-mail saem sozinhos</b> &mdash; como este, de um modelo. O resto espera uma pessoa.</p>
+      <figcaption class="meta">Demo com dados p&uacute;blicos do Joplin &middot; tickets reais sob NDA &middot; sem v&iacute;nculo com o Joplin</figcaption>
     </figure>
-    <p><b>O que se automatiza &eacute; a escrita, n&atilde;o o envio.</b> As horas n&atilde;o v&atilde;o em apertar enviar: v&atilde;o em &ldquo;ler a conversa toda, achar o comprovante, entender a vers&atilde;o, n&atilde;o errar o pre&ccedil;o&rdquo;.</p>
-    <p style="margin-top:var(--s-4)"><b>Os limites s&atilde;o uma lista.</b> Cinco tipos de e-mail podem sair sem uma pessoa, nomeados um a um. O resto espera aprova&ccedil;&atilde;o.</p>
     <p class="ghlink" style="margin-top:var(--s-6)">Tamb&eacute;m projetei e conduzo um pipeline de testes de regress&atilde;o &mdash; mesmo princ&iacute;pio. Os reposit&oacute;rios est&atilde;o sob NDA, mas o trabalho aparece: <a href="https://github.com/luxartpoi">GitHub</a>.</p>
   </section>
 
   <section class="slab" style="border-bottom:0">
     <p class="tag meta">Quem eu sou</p>
     <h2 class="display">Suporte por voca&ccedil;&atilde;o.</h2>
-    <p>Gerar uma resposta hoje leva segundos. Ouvir a dor real por tr&aacute;s da mensagem, n&atilde;o: a pessoa raramente escreve o que quebrou &mdash; ela escreve que est&aacute; irritada. Comecei no atendimento por telefone e constru&iacute; suporte como head duas vezes: enxergo o usu&aacute;rio e o time. Quando quebra, o sinal chega ao dono do produto enquanto ainda &eacute; informa&ccedil;&atilde;o, e n&atilde;o uma enxurrada de reclama&ccedil;&otilde;es. Trabalho com IA em suporte desde o primeiro dia. Remoto, PT / EN / RU.</p>
+    <p>Gerar uma resposta leva segundos. Ouvir a dor real por tr&aacute;s dela, n&atilde;o. Comecei no atendimento por telefone e constru&iacute; suporte duas vezes como head: enxergo o cliente e o time. Remoto &middot; PT / EN / RU.</p>
   </section>
 </div>
 
